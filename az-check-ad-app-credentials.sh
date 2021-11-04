@@ -1,5 +1,5 @@
 #!/bin/bash
-appIds=($(az ad app list --query [].appId --output tsv))
+appIds=($(az ad app list --query "[].appId" --output tsv))
 threshold=$(date -d "+30 days" +%s)
 today=$(date +%s)
 for appId in "${appIds[@]}"; do
